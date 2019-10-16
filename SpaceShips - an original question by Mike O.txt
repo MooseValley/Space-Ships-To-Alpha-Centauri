@@ -1,0 +1,92 @@
+*** Superceeded - use question in Word Doc
+*** Superceeded - use question in Word Doc
+*** Superceeded - use question in Word Doc
+
+SpaceShips - an original question by Mike O
+
+Based on:
+	Mike O's own imagination.  I enjoy thinking about stuff like this.
+
+Multiple spaceships are sent out from Earth: destination Alpha Centauri our nearest stellar neighbour, 4.2 light years away.
+
+Space Craft #1: Impulse Engine
+	Immediate acceleration - no manuervering around sun necessary.
+	Starting velocity = velocity in orbit around the Earth = 25.0 Km/sec
+	Acceleration: 0.01 G
+	Mass: 170,000 Kg
+
+Space Craft #2: Solar Sail
+	needs 2 years to manueveur into the right orbit around the sun and extend the sails.
+	Starting velocity = velocity in tight orbit around the Sun = 265.0 Km/sec
+	Acceleration: 60 G until 1 billion Km from the sun and then 0 from then on (simplified to how this would really work).
+	Mass: 50,000 Kg
+
+Space Craft #3: Solar Sail + Impulse
+	heavier and slower because fo additional engine / hardware.
+	needs 2 years to manueveur into the right orbit around the sun and extend the sails.
+	Starting velocity = velocity in tight orbit around the Sun = 195.0 Km/sec
+	(Yes, slower velocity because of extra mass)
+	Acceleration: 16 G until 1 billion Km from the sun and then 0 from then on (simplified to how this would really work).
+	(Yes, slower acceleration because of extra mass)
+	Mass: 200,000 Kg
+	At that point, jettison the solar sail arms / hardware (reducing mass by 30,000 Kg), and Impulse engine can be fired up
+	Acceleration: 0.01 G (300 million Km from Sun and beyond)
+
+Assume all distances are linear, and all velocities are in the correct direction (no additional manuevering required).
+
+Some useful formulas:
+S = UT + 1/2 AT^2
+V = SQRT (U^2 + 2 AS)
+F = MA 	(see *** below)
+
+Where:
+T: time in seconds
+U: initial velocity in Km/Sec
+A: Acceleration in Km/Sec/Sec
+S: Distance travelled so far in Km.
+F: Force
+M: Mass
+
+Do whatever research you need to fill in the missing details / pieces of the puzzle.
+Yep, just like in real life !  :)
+
+Where is your start point ?  Earth ?  The Sun ?  Does it really matter ?
+
+Plot the distance / velocity for each spaceship.
+Select suitable increments.
+
+Which space ship arrives first at Alpha Centauri ?
+At Alpha Centauri, what speed are the spaceships going ?
+
+Hints and Tips:
+Start with Ship #1
+Explore the calculations in Excel and your programming language - just for the first 100 seconds, and then for the first 100 days.  Ensure you are getting the same values.
+Be very careful of your units of measure - ensure your conversions are correct.
+e.g. If acceleration is 5.4 G, then this is 5.4 x the force of gravity on Earth at sea level = 5.4 x 9.81 m/sec/sec.  You might need to convert this to Km/sec/sec for your space travel calculations.
+Do the full calculation for Ship #1.
+Ship #1 should arrive at Alpha Centauri after approx 90 years.
+Make sure you get an answer close to this before moving onto the other ships.
+Can you make your code better, easier to re-use ?
+Create a SpaceShip class with suitable class fields (acceleration, starting velocity, etc) and suitable methods (getVelocityAtSecs (), getDistanceAtSecs (), etc).
+Be careful not to let Ship #2 and #3 complicate things.  Maybe you can split these into multipe "pseudo" ships.
+For Ship #2: it only accelerates for the first part of the journey, and then it coasts the rest of the way.  Use Ship 2A for the first part of the journey, and then Ship 2B when it coasts through the bulk of the journey to the destination.
+For Ship #3: Use Ship 3A for the first part of the journey, and then when the solar sails detach, create another ship - Ship 3B using Ship 3A's final velocity, etc as starting values.
+Make sure your space ship velocity cannot exceed 95% of the speed of light (because very strange things happen after this speed, and we don't want to complicate things).
+
+What if the solar sail space ship acceleration decreased with square of the distance from the Sun ?
+
+*** Is mass of the space ship relevant to this question ?  You have been told the acceleration (in G) ?  What does this mean ?  Do we need to worry about F = MA in this question ?
+
+
+*** Sample Output:
+
+Space Ship #1:
+---------------
+ 0 Years                  0 Km  0.00%      25.000 Km/sec  0.00% Light
+ 1 Years     49,569,758,590 Km  0.01%   3,118.687 Km/sec  0.10% Light
+ 2 Years    196,702,231,359 Km  0.05%   6,212.375 Km/sec  0.21% Light
+ 3 Years    441,397,418,309 Km  0.11%   9,306.062 Km/sec  0.31% Light
+ 4 Years    783,655,319,438 Km  0.20%  12,399.750 Km/sec  0.41% Light
+ 5 Years  1,223,475,934,747 Km  0.31%  15,493.437 Km/sec  0.52% Light
+:::
+etc
