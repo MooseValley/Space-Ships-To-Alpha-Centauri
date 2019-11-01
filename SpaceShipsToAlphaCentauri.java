@@ -1,3 +1,9 @@
+/*
+ Author: Mike O'Malley
+ Source: SpaceShipsToAlphaCentauri.java
+Descrtn: Simple simulation of a SpaceShip race to Alpha Centauri.
+*/
+
 class Constants
 {
    public static final double M_PER_KM                    =          1_000.0;
